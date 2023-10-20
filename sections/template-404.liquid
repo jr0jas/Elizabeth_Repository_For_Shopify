@@ -4,7 +4,7 @@
         <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title }}</p>
     </div>
     <div class="my-4">
-        {% if section.setting.button_url == black %}
+        {% if section.settings.button_url == blank %}
             {% assign shop_url =  shop.secure_url %}
         {% else %}
             {% assign shop_url =  section.setting.button_url %}    
@@ -13,33 +13,35 @@
     </div>
 </div>
 
-{% schema %}  
+{% schema %}
 {
-    "name": "Template 404",
-    "settings": [
-        {
-            "type": "text",
-            "id": "title",
-            "default": "404",
-            "label": "404 Heading Title"
-        }
-        {
-            "type": "text",
-            "id": "subtext_title",
-            "default": "The page that you're looking for is not found",
-            "label": "404 Subtext Title"
-        },
-        {
-            "type": "text",
-            "id": "button_label",
-            "default": "Back to homepage",
-            "label": "Button Label"
-        },
-        {
-            "type": "url",
-            "id": "button_url",
-            "label": "Button URL"
-        }
-    ]
+  "name": "Template 404",
+  "tag": "section",
+  "class": "flex items-center justify-center text-center py-7 h-screen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "404",
+      "label": "404 Heading Title"
+    },
+    {
+      "type": "text",
+      "id": "subtext_title",
+      "default": "The page that you're looking for is not found",
+      "label": "404 Subtext Title"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Back to homepage",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ]
 }
-{% endschema %}%}
+{% endschema %}
