@@ -1,28 +1,22 @@
-{%  for block in  section.blocks %}  
+{% for block in  section.blocks %}  
     {% case block.type %}
-        {% when "article.title" %}
-        {% when "article.author" %}
-        {% when "article.published_date" %}  
-        {% when "article.thumbnail" %}
-        {% when "article.content" %}    
+        {% when "article_title" %}
+            <h1>{{ article.title }}</h1>
+        {% when "article_author" %}
+            {% if section.settings.enabled_author %}
+                <small>{{ article.author }}</small>   
+            {% endif %}
+        {% when "article_published_date" %}  
+            {% if section.settings.enabled_published_date %}
+                <time datetime="{{ article.published_at | date: '%y-%m-%d' }}"></time> 
+            {% endif %}
+        {% when "article_feature_image" %}
+            <img src="{{ article.image |  img_url: 'large'}}" alt="{{ article.image.alt }}" loading="lazy"/>
+        {% when "article_content" %}         
+            <div class="">{{ article.content }}</div>  
         {% else %}
-            
     {% endcase %}
 {% endfor %}
-<h1>{{ article.title }}</h1>
-
-{% if section.settings.enabled_author %}
-    <small>{{ article.author }}</small>   
-{% endif %}
-
-
-{% if section.settings.enabled_published_date %}
-    <time datetime="{{ article.published_at | date: '%y-%m-%d' }}"></time> 
-{% endif %}
-
-<img src="{{ article.image |  img_url: 'large'}}" alt="{{ article.image.alt }}" loading="lazy"/>
-
-<div class="">{{ article.content }}</div>
 
 {% schema %}
 {
