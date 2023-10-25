@@ -10,7 +10,7 @@
                     "type": "article_author"
                 },
                 "published_date": {
-                    "type": "article_title"
+                    "type": "article_published_date"
                 },
                 "thumbnail": {
                     "type": "feature_image"
