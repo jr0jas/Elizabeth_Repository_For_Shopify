@@ -2,7 +2,12 @@
   "sections": {
     "template": {
       "type": "template-blog",
+      "custom_css": [
+        "h2 {font-size: 44px;}"
+      ],
       "settings": {
+        "blog_read_more": "Read more...",
+        "number_of_blog_posts": 4
       }
     }
   },
