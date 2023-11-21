@@ -6,8 +6,8 @@
         "h2 {font-size: 44px;}"
       ],
       "settings": {
-        "blog_read_more": "Read more...",
-        "number_of_blog_posts": 4
+        "blog_read_more": "Details...",
+        "number_of_blog_posts": 3
       }
     }
   },
